@@ -1,0 +1,14 @@
+<?xml version ="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite2" verbose="1">
+    <test name="Regression">
+        <packages>
+            <package name="login"/>
+            <package name="call_phones"/>
+            <package name="contacts"/>
+            <package name="home_page"/>
+            <package name="profile"/>
+            <package name="search_skype"/>
+        </packages>
+    </test>
+</suite>
