@@ -50,7 +50,6 @@ public class Test2_LoginScenarios {
     @Test
     private void loginPositive() throws InterruptedException {
         loginPage1.loadPage();
-        //loginPage1.isEmailFieldVisible();
         loginPage1.populateEmail("kvas.test_8");
         loginPage2.populatePassField("123Cat123");
         loginPage2.clickSigninBtn2();
@@ -59,7 +58,6 @@ public class Test2_LoginScenarios {
     @Test
     private void loginInvalidPass() throws InterruptedException {
         loginPage1.loadPage();
-        //loginPage1.isEmailFieldVisible();
         loginPage1.populateEmail("kvas.test_8");
         loginPage2.populatePassField("123");
         loginPage2.clickSigninBtn2Inv();
@@ -70,7 +68,6 @@ public class Test2_LoginScenarios {
     @Test
     private void loginInvalidEmail(){
         loginPage1.loadPage();
-        //loginPage1.isEmailFieldVisible();
         loginPage1.populateEmailInvalid("kvas.test_8889");
     }
 

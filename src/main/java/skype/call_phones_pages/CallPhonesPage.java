@@ -24,21 +24,30 @@ public class CallPhonesPage extends BasePage {
         super(driver);
     }
 
-    @FindBy(css = ".SkypeOutHeader-input") WebElement enterNumberField;
-    @FindBy(css = ".SelectBox-header") WebElement chooseCountryDropdown;
-    @FindBy(xpath = "//ul[@role='listbox']") WebElement listBox;
+    @FindBy(css = ".SkypeOutHeader-input")
+    WebElement enterNumberField;
+    @FindBy(css = ".SelectBox-header")
+    WebElement chooseCountryDropdown;
+    @FindBy(xpath = "//ul[@role='listbox']")
+    WebElement listBox;
 
-    @FindBy(xpath = "//ul[@role='listbox']") List<WebElement> listBox2;
+    @FindBy(xpath = "//ul[@role='listbox']")
+    List<WebElement> listBox2;
 
-    @FindBy(xpath = "//ul[@role='listbox']/li/span[@class='SelectBox-optionName']") WebElement countryOptions;
-    @FindBy(css = ".SelectBox-options") WebElement optionsBox;
-    @FindBy(css = ".SelectBox-optionName") WebElement optionName;
-    @FindBy(xpath = "//div[@class='SelectBox-options']//ul[@role='listbox']/li[@role='option' and @title='Ukraine']") WebElement countryUkraine;
-    @FindBy(xpath = "//div[@class='SelectBox-options']//ul[@role='listbox']/li[@role='option' and @title='Albania']") WebElement countryAlbania;
-    @FindBy(css = ".btn.disabled.primary.circle") WebElement callBtnDisabled;
-    @FindBy(xpath = "//button[@class='btn primary circle' and @title='Call']") WebElement callBtnEnabled;
-
-
+    @FindBy(xpath = "//ul[@role='listbox']/li/span[@class='SelectBox-optionName']")
+    WebElement countryOptions;
+    @FindBy(css = ".SelectBox-options")
+    WebElement optionsBox;
+    @FindBy(css = ".SelectBox-optionName")
+    WebElement optionName;
+    @FindBy(xpath = "//div[@class='SelectBox-options']//ul[@role='listbox']/li[@role='option' and @title='Ukraine']")
+    WebElement countryUkraine;
+    @FindBy(xpath = "//div[@class='SelectBox-options']//ul[@role='listbox']/li[@role='option' and @title='Albania']")
+    WebElement countryAlbania;
+    @FindBy(css = ".btn.disabled.primary.circle")
+    WebElement callBtnDisabled;
+    @FindBy(xpath = "//button[@class='btn primary circle' and @title='Call']")
+    WebElement callBtnEnabled;
 
 
     public void makeCall() throws InterruptedException {
@@ -62,53 +71,14 @@ public class CallPhonesPage extends BasePage {
 
         //or
 
-        for (WebElement element : listBox2){
+        for (WebElement element : listBox2) {
             System.out.println(element.getText());
-        }
-
-        for (WebElement element : listBox2){
             click(countryUkraine);
         }
 
+
         click(callBtnEnabled);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//
-//        //Thread.sleep(3000);
-//        actions.click(countryAlbania).build().perform();
-//        //Thread.sleep(1000);
-//        click(callBtnEnabled);
-
-
     }
-
-//    List<WebElement> contacts = driver.findElements(By.cssSelector("swx-recent-item.list-selectable"));
-//    for (WebElement contact : contacts){
-//        String contactName = contact.findElement(By.cssSelector("span.topic")).getText();
-//        String notification = contact.findElement(By.cssSelector("p.fontSize-h4")).getText();
-//        System.out.println(contactName + "- " + notification);
-//
-//
-//    }
 
 }

@@ -69,7 +69,7 @@ public class Test1_LoginPositive {
         loginPage2.clickSigninBtn2();
         Thread.sleep(5000);
         Assert.assertEquals(driver.getTitle(), title);
-        WebDriverWait webDriverWait = new WebDriverWait(driver, 30);
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 60);
         webDriverWait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".shellSplashContent")));
         homePage.clickDisplayName();
         profilePage.signout();

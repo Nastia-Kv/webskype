@@ -42,7 +42,6 @@ public class Test3_GoToScenarios {
         options.setExperimentalOption("prefs", prefs);
         System.setProperty("webdriver.chrome.driver", "/Users/nastia/Documents/workspace_2/Drivers/chromedriver-2.27");
         driver = new ChromeDriver(options);
-//        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
         loginPage1 = new LoginPage1(driver);
         loginPage2 = new LoginPage2(driver);
@@ -55,14 +54,6 @@ public class Test3_GoToScenarios {
 //        driver.quit();
 //    }
 
-//    @Test
-    private void loginPositive() throws InterruptedException {
-        loginPage1.loadPage();
-        loginPage1.populateEmail("kvas.test_8");
-        loginPage2.populatePassField("123Cat123");
-        loginPage2.clickSigninBtn2();
-
-    }
 
     @Test
     private void goToScenarios() throws InterruptedException {
@@ -73,7 +64,7 @@ public class Test3_GoToScenarios {
         loginPage2.populatePassField("123Cat123");
         loginPage2.clickSigninBtn2();
 
-        WebDriverWait webDriverWait = new WebDriverWait(driver, 30);
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 60);
         webDriverWait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".shellSplashContent")));
 
         homePage.clickDisplayName();

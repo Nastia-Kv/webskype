@@ -43,12 +43,11 @@ public class ChatPage extends BasePage {
         Actions actions = new Actions(driver);
         actions.moveToElement(imArea2).click().perform();
         imArea2.sendKeys("hi");
-        //imArea2.sendKeys("hi");
     }
 
 
     public void populateIMarea(String text) throws InterruptedException {
-        isVisibleWithTryCatch(imArea, 60000);
+        isVisibleWithTryCatch(imArea, 100000);
         Actions actions = new Actions(driver);
         actions.moveToElement(imArea).click().perform();
         imArea.sendKeys(text);
@@ -62,7 +61,7 @@ public class ChatPage extends BasePage {
         Actions actions = new Actions(driver);
         actions.moveToElement(historyArea).click().perform();
 
-        isVisibleWithTryCatch(imArea3, 60000);
+        isVisibleWithTryCatch(imArea3, 100000);
 
         actions.moveToElement(imArea3).click().perform();
         imArea3.sendKeys(text);
@@ -70,7 +69,7 @@ public class ChatPage extends BasePage {
     }
 
     public void send() throws InterruptedException {
-        isVisibleWithTryCatch(sendBtn, 60000);
+        isVisibleWithTryCatch(sendBtn, 100000);
         click(sendBtn);
     }
 

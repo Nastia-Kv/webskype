@@ -34,7 +34,6 @@ public class Test6_SendMessage {
         options.setExperimentalOption("prefs", prefs);
         System.setProperty("webdriver.chrome.driver", "/Users/nastia/Documents/workspace_2/Drivers/chromedriver-2.27");
         driver = new ChromeDriver(options);
-        //driver.manage().timeouts().implicitlyWait(DEFAULT_WAIT_SECONDS, TimeUnit.SECONDS);
 
         homePage = new HomePage(driver);
         loginPage1 = new LoginPage1(driver);
@@ -45,7 +44,6 @@ public class Test6_SendMessage {
     @Test
     private void loginPositive() throws InterruptedException {
         loginPage1.loadPage();
-        //loginPage1.isEmailFieldVisible();
         loginPage1.populateEmail("kvas.test_8");
         loginPage2.populatePassField("123Cat123");
         loginPage2.clickSigninBtn2();
@@ -54,7 +52,7 @@ public class Test6_SendMessage {
 
     @Test(dependsOnMethods = "loginPositive")
     private void sendMessage() throws InterruptedException {
-        WebDriverWait webDriverWait = new WebDriverWait(driver, 30);
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 60);
         webDriverWait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".shellSplashContent")));
         homePage.searchForContactInContactList2("kvas.test_7");
         chatPage.populateIMarea("Hi");

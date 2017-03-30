@@ -49,7 +49,6 @@ public class Test8_ManageMoodMessage extends BaseTest {
     @Test(parameters = "1")
     private void loginPositive() throws InterruptedException {
         loginPage1.loadPage();
-        //loginPage1.isEmailFieldVisible();
         loginPage1.populateEmail("kvas.test_8");
         loginPage2.populatePassField("123Cat123");
         loginPage2.clickSigninBtn2();
@@ -58,7 +57,7 @@ public class Test8_ManageMoodMessage extends BaseTest {
 
     @Test(parameters = "2")
     private void manageMoodMassage() throws InterruptedException {
-        WebDriverWait webDriverWait = new WebDriverWait(driver, 30);
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 60);
         webDriverWait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".shellSplashContent")));
         homePage.clickDisplayName();
         profilePage.editMoodMessage();
