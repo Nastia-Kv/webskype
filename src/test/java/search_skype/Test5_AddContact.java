@@ -35,7 +35,6 @@ public class Test5_AddContact {
         options.setExperimentalOption("prefs", prefs);
         System.setProperty("webdriver.chrome.driver", "/Users/nastia/IdeaProjects/webskype/chromedriver-2.27");
         driver = new ChromeDriver(options);
-        //driver.manage().timeouts().implicitlyWait(DEFAULT_WAIT_SECONDS, TimeUnit.SECONDS);
 
         homePage = new HomePage(driver);
         loginPage1 = new LoginPage1(driver);
@@ -51,7 +50,6 @@ public class Test5_AddContact {
     @Test
     private void loginPositive() throws InterruptedException {
         loginPage1.loadPage();
-        //loginPage1.isEmailFieldVisible();
         loginPage1.populateEmail("kvas.test_8");
         loginPage2.populatePassField("123Cat123");
         loginPage2.clickSigninBtn2();
@@ -60,9 +58,9 @@ public class Test5_AddContact {
 
     @Test(dependsOnMethods = "loginPositive")
     private void addContact() throws InterruptedException {
-        WebDriverWait webDriverWait = new WebDriverWait(driver, 30);
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 60);
         webDriverWait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".shellSplashContent")));
-        homePage.searchForExistingNewContact2("vvpp02");
+        homePage.searchForExistingNewContact2("vvpp04");
         homePage.clickNewFoundContact();
         chatPage.clickAddToContactsBtn();
 

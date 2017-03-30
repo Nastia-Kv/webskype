@@ -51,7 +51,7 @@ public class Test12_MakeCall {
         loginPage1.populateEmail("kvas.test_8");
         loginPage2.populatePassField("123Cat123");
         loginPage2.clickSigninBtn2();
-        WebDriverWait webDriverWait = new WebDriverWait(driver, 60);
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 80);
         webDriverWait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".shellSplashContent")));
         homePage.clickCallPhonesBtn();
         callPhonesPage.makeCall();

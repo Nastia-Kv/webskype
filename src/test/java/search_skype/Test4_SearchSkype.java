@@ -64,7 +64,7 @@ public class Test4_SearchSkype {
 
     @Test(dependsOnMethods = "loginPositive")
     private void searchForContact() throws InterruptedException {
-        WebDriverWait webDriverWait = new WebDriverWait(driver, 30);
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 60);
         webDriverWait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".shellSplashContent")));
         homePage.searchForExistingNewContact("kvas3.test3@outlook.com");
         homePage.searchForExistingNewContact("kvas.tererest_6");

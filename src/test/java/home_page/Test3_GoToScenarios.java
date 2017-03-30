@@ -55,14 +55,6 @@ public class Test3_GoToScenarios {
 //        driver.quit();
 //    }
 
-//    @Test
-    private void loginPositive() throws InterruptedException {
-        loginPage1.loadPage();
-        loginPage1.populateEmail("kvas.test_8");
-        loginPage2.populatePassField("123Cat123");
-        loginPage2.clickSigninBtn2();
-
-    }
 
     @Test
     private void goToScenarios() throws InterruptedException {

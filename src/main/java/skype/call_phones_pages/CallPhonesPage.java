@@ -48,7 +48,7 @@ public class CallPhonesPage extends BasePage {
 //        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".SelectBox-header")));
 
 //
-        if (!isVisibleWithTryCatch(chooseCountryDropdown, 1000000))
+        if (!isVisibleWithTryCatch(chooseCountryDropdown, 100000))
             throw new RuntimeException("runtime exception");
         Actions actions = new Actions(driver);
         actions.click(chooseCountryDropdown).perform();
@@ -64,11 +64,9 @@ public class CallPhonesPage extends BasePage {
 
         for (WebElement element : listBox2){
             System.out.println(element.getText());
-        }
-
-        for (WebElement element : listBox2){
             click(countryUkraine);
         }
+
 
         click(callBtnEnabled);
 

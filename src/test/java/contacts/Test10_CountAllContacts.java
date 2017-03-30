@@ -56,7 +56,7 @@ public class Test10_CountAllContacts {
         loginPage1.populateEmail("kvas.test_8");
         loginPage2.populatePassField("123Cat123");
         loginPage2.clickSigninBtn2();
-        WebDriverWait webDriverWait = new WebDriverWait(driver, 30);
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 60);
         webDriverWait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".shellSplashContent")));
         homePage.clickContactsBtn();
         contactsPage.countAllContacts();

@@ -48,7 +48,7 @@ public class ChatPage extends BasePage {
 
 
     public void populateIMarea(String text) throws InterruptedException {
-        isVisibleWithTryCatch(imArea, 60000);
+        isVisibleWithTryCatch(imArea, 100000);
         Actions actions = new Actions(driver);
         actions.moveToElement(imArea).click().perform();
         imArea.sendKeys(text);
@@ -70,7 +70,7 @@ public class ChatPage extends BasePage {
     }
 
     public void send() throws InterruptedException {
-        isVisibleWithTryCatch(sendBtn, 60000);
+        isVisibleWithTryCatch(sendBtn, 100000);
         click(sendBtn);
     }
 
