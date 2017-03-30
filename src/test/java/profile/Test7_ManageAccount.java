@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import skype.chat_pages.ChatPage;
@@ -37,7 +38,7 @@ public class Test7_ManageAccount {
         prefs.put("profile.default_content_setting_values.notifications", 2);
         ChromeOptions options = new ChromeOptions();
         options.setExperimentalOption("prefs", prefs);
-        System.setProperty("webdriver.chrome.driver", "/Users/nastia/Documents/workspace_2/Drivers/chromedriver-2.27");
+        System.setProperty("webdriver.chrome.driver", "Users/nastia/IdeaProjects/webskype/chromedriver-2.27");
         driver = new ChromeDriver(options);
 
         homePage = new HomePage(driver);
@@ -45,6 +46,11 @@ public class Test7_ManageAccount {
         loginPage2 = new LoginPage2(driver);
         profilePage = new ProfilePage(driver);
         cssAnimatablePage = new CssAnimatablePage(driver);
+    }
+
+    @AfterClass
+    private void teardown() {
+        driver.quit();
     }
 
     @Test
@@ -58,14 +64,14 @@ public class Test7_ManageAccount {
 
     @Test(dependsOnMethods = "loginPositive")
     private void manageAccountOnWebsite() throws Exception {
-        WebDriverWait webDriverWait = new WebDriverWait(driver, 30);
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 60);
         webDriverWait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".shellSplashContent")));
         homePage.clickDisplayName();
         String parentWindow = driver.getWindowHandle();
         System.out.println("parent window handle " + parentWindow);
         profilePage.clickManageAccount();
         System.out.println(driver.getTitle());
-        for (String childTab : driver.getWindowHandles()){
+        for (String childTab : driver.getWindowHandles()) {
             driver.switchTo().window(childTab);
         }
         System.out.println(driver.getTitle());
@@ -76,7 +82,7 @@ public class Test7_ManageAccount {
         Windows.switchByName("Skype My Account", driver);
         System.out.println(driver.getTitle());
         driver.switchTo().window(parentWindow);
-       // driver.switchTo().window((String) driver.getWindowHandles().toArray()[0]);
+        // driver.switchTo().window((String) driver.getWindowHandles().toArray()[0]);
     }
 
 
