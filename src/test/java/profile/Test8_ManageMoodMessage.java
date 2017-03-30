@@ -35,7 +35,7 @@ public class Test8_ManageMoodMessage extends BaseTest {
         prefs.put("profile.default_content_setting_values.notifications", 2);
         ChromeOptions options = new ChromeOptions();
         options.setExperimentalOption("prefs", prefs);
-        System.setProperty("webdriver.chrome.driver", "/Users/nastia/Documents/workspace_2/Drivers/chromedriver-2.27");
+        System.setProperty("webdriver.chrome.driver", "/Users/nastia/IdeaProjects/webskype/chromedriver-2.27");
         driver = new ChromeDriver(options);
         homePage = new HomePage(driver);
         loginPage1 = new LoginPage1(driver);
