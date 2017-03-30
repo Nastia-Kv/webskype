@@ -33,7 +33,7 @@ public class Test9_SignOut {
         prefs.put("profile.default_content_setting_values.notifications", 2);
         ChromeOptions options = new ChromeOptions();
         options.setExperimentalOption("prefs", prefs);
-        System.setProperty("webdriver.chrome.driver", "Users/nastia/IdeaProjects/webskype/chromedriver-2.27");
+        System.setProperty("webdriver.chrome.driver", "/Users/nastia/IdeaProjects/webskype/chromedriver-2.27");
         driver = new ChromeDriver(options);
 
         homePage = new HomePage(driver);
