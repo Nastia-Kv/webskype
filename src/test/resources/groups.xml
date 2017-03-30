@@ -1,0 +1,91 @@
+<?xml version ="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite3" verbose="1">
+    <test name="Test3">
+        <groups>
+            <run>
+                <include name="p2"/>
+
+            </run>
+        </groups>
+        <classes>
+            <class name="login.Test1_LoginPositive">
+            <methods>
+                <exclude name="testMethod1"/>
+            </methods>
+            </class>
+        </classes>
+
+
+
+        <!--<groups>-->
+            <!--<run>-->
+                <!--<include name="smoke"/>-->
+            <!--</run>-->
+        <!--</groups>-->
+        <!--<classes>-->
+            <!--<class name="login.Test1_LoginPositive">-->
+                <!--<methods>-->
+                    <!--<exclude name="testMethod2"/>-->
+                <!--</methods>-->
+            <!--</class>-->
+        <!--</classes>-->
+    <!--</test>-->
+
+
+
+        <!--<groups>-->
+            <!--<run>-->
+                <!--<include name="win.*"/>-->
+            <!--</run>-->
+        <!--</groups>-->
+        <!--<classes>-->
+            <!--<class name="login.Test1_LoginPositive">-->
+                <!--<methods>-->
+                    <!--<exclude name="testMethod2"/>-->
+                <!--</methods>-->
+            <!--</class>-->
+        <!--</classes>-->
+    <!--</test>-->
+
+        <!--<groups>-->
+            <!--<define name="functest">-->
+                <!--<include name="win.smoke"/>-->
+                <!--<include name="linux.smoke"/>-->
+            <!--</define>-->
+
+            <!--<define name="all">-->
+                <!--<include name="functest"/>-->
+                <!--<include name="simpletest"/>-->
+            <!--</define>-->
+
+            <!--<run>-->
+                <!--<include name="all"/>-->
+                <!--<exclude name="broken"/>-->
+            <!--</run>-->
+        <!--</groups>-->
+
+        <!--<classes>-->
+            <!--<class name="login.Test1_LoginPositive"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+
+        <!--<groups>-->
+
+            <!--<define name="all">-->
+                <!--<include name="p1"/>-->
+                <!--<include name="simpletest"/>-->
+            <!--</define>-->
+
+            <!--<run>-->
+                <!--<include name="all"/>-->
+                <!--<exclude name="broken"/>-->
+            <!--</run>-->
+        <!--</groups>-->
+
+        <!--<classes>-->
+            <!--<class name="login.Test1_LoginPositive"/>-->
+        <!--</classes>-->
+    </test>
+
+</suite>
