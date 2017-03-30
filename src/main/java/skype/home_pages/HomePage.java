@@ -92,7 +92,7 @@ public class HomePage extends BasePage {
     }
 
     public void clickContactsBtn() throws InterruptedException {
-        if (!isVisibleWithTryCatch(contactsBtn, 100000))
+        if (!isVisibleWithTryCatch(contactsBtn, 1000000))
             throw new RuntimeException("runtime exception");
         //isElementVisibleCustom2(contactsBtn);
         //isVisible(contactsBtn, 30);
@@ -101,7 +101,7 @@ public class HomePage extends BasePage {
     }
 
     public void clickCallPhonesBtn() throws InterruptedException {
-        if (!isVisibleWithTryCatch(callPhonesBtn, 100000))
+        if (!isVisibleWithTryCatch(callPhonesBtn, 1000000))
             throw new RuntimeException("runtime exception");
         //waitForElementToBeDisplayed(callPhonesBtn);
         //isVisible(callPhonesBtn, 30);
@@ -109,7 +109,7 @@ public class HomePage extends BasePage {
     }
 
     public void clickSettingsBtn() throws InterruptedException {
-        isVisibleWithTryCatch(settingsBtn, 100000);
+        isVisibleWithTryCatch(settingsBtn, 1000000);
         //waitForElementToBeDisplayed(settingsBtn);
         //isVisible(settingsBtn, 30);
         click(settingsBtn);

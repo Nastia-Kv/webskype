@@ -41,11 +41,11 @@ public class Test5_AddContact {
         loginPage2 = new LoginPage2(driver);
         chatPage = new ChatPage(driver);
     }
-
-    @AfterClass(alwaysRun = true)
-    private void teardown() {
-        driver.quit();
-    }
+//
+//    @AfterClass(alwaysRun = true)
+//    private void teardown() {
+//        driver.quit();
+//    }
 
     @Test
     private void loginPositive() throws InterruptedException {
@@ -60,7 +60,7 @@ public class Test5_AddContact {
     private void addContact() throws InterruptedException {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 60);
         webDriverWait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".shellSplashContent")));
-        homePage.searchForExistingNewContact2("vvpp04");
+        homePage.searchForExistingNewContact2("vvpp10");
         homePage.clickNewFoundContact();
         chatPage.clickAddToContactsBtn();
 
