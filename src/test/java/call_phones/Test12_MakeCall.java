@@ -34,7 +34,7 @@ public class Test12_MakeCall {
         prefs.put("profile.default_content_setting_values.notifications", 2);
         ChromeOptions options = new ChromeOptions();
         options.setExperimentalOption("prefs", prefs);
-        System.setProperty("webdriver.chrome.driver", "/Users/nastia/IdeaProjects/webskype/chromedriver-2.27");
+        System.setProperty("webdriver.chrome.driver", "/Users/nastia/Documents/workspace_2/Drivers/chromedriver-2.27");
         driver = new ChromeDriver(options);
 
         homePage = new HomePage(driver);
@@ -51,7 +51,7 @@ public class Test12_MakeCall {
         loginPage1.populateEmail("kvas.test_8");
         loginPage2.populatePassField("123Cat123");
         loginPage2.clickSigninBtn2();
-        WebDriverWait webDriverWait = new WebDriverWait(driver, 80);
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 60);
         webDriverWait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".shellSplashContent")));
         homePage.clickCallPhonesBtn();
         callPhonesPage.makeCall();

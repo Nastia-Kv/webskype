@@ -43,7 +43,6 @@ public class ChatPage extends BasePage {
         Actions actions = new Actions(driver);
         actions.moveToElement(imArea2).click().perform();
         imArea2.sendKeys("hi");
-        //imArea2.sendKeys("hi");
     }
 
 
@@ -62,7 +61,7 @@ public class ChatPage extends BasePage {
         Actions actions = new Actions(driver);
         actions.moveToElement(historyArea).click().perform();
 
-        isVisibleWithTryCatch(imArea3, 60000);
+        isVisibleWithTryCatch(imArea3, 100000);
 
         actions.moveToElement(imArea3).click().perform();
         imArea3.sendKeys(text);

@@ -128,7 +128,7 @@ public class BasePage {
                     //break; or
                     return true;
                 } else {
-//                    System.out.println("Element present but not visible");
+                    //System.out.println("Element present but not visible");
                 }
             } catch (NoSuchElementException e) {
                 System.out.println("NO element in DOM");

@@ -35,7 +35,7 @@ public class Test8_ManageMoodMessage extends BaseTest {
         prefs.put("profile.default_content_setting_values.notifications", 2);
         ChromeOptions options = new ChromeOptions();
         options.setExperimentalOption("prefs", prefs);
-        System.setProperty("webdriver.chrome.driver", "/Users/nastia/IdeaProjects/webskype/chromedriver-2.27");
+        System.setProperty("webdriver.chrome.driver", "/Users/nastia/Documents/workspace_2/Drivers/chromedriver-2.27");
         driver = new ChromeDriver(options);
         homePage = new HomePage(driver);
         loginPage1 = new LoginPage1(driver);
@@ -49,7 +49,6 @@ public class Test8_ManageMoodMessage extends BaseTest {
     @Test(parameters = "1")
     private void loginPositive() throws InterruptedException {
         loginPage1.loadPage();
-        //loginPage1.isEmailFieldVisible();
         loginPage1.populateEmail("kvas.test_8");
         loginPage2.populatePassField("123Cat123");
         loginPage2.clickSigninBtn2();
@@ -58,7 +57,7 @@ public class Test8_ManageMoodMessage extends BaseTest {
 
     @Test(parameters = "2")
     private void manageMoodMassage() throws InterruptedException {
-        WebDriverWait webDriverWait = new WebDriverWait(driver, 30);
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 60);
         webDriverWait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".shellSplashContent")));
         homePage.clickDisplayName();
         profilePage.editMoodMessage();

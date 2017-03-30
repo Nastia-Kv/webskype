@@ -39,7 +39,7 @@ public class Test1_LoginPositive {
         prefs.put("profile.default_content_setting_values.notifications", 2);
         ChromeOptions options = new ChromeOptions();
         options.setExperimentalOption("prefs", prefs);
-        System.setProperty("webdriver.chrome.driver", "/Users/nastia/IdeaProjects/webskype/chromedriver-2.27");
+        System.setProperty("webdriver.chrome.driver", "/Users/nastia/Documents/workspace_2/Drivers/chromedriver-2.27");
         driver = new ChromeDriver(options);
         loginPage1 = new LoginPage1(driver);
         loginPage2 = new LoginPage2(driver);
@@ -69,7 +69,7 @@ public class Test1_LoginPositive {
         loginPage2.clickSigninBtn2();
         Thread.sleep(5000);
         Assert.assertEquals(driver.getTitle(), title);
-        WebDriverWait webDriverWait = new WebDriverWait(driver, 30);
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 60);
         webDriverWait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".shellSplashContent")));
         homePage.clickDisplayName();
         profilePage.signout();

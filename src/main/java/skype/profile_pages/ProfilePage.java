@@ -33,10 +33,8 @@ public class ProfilePage extends BasePage {
 
     public void returnToHome() throws InterruptedException {
 //        isVisibleWithTryCatch(returnToHomeBtn, 60);
-        if (!isVisibleWithTryCatch(returnToHomeBtn, 60))
+        if (!isVisibleWithTryCatch(returnToHomeBtn, 100000))
             throw new RuntimeException("666");
-        //waitForElementToBeDisplayed(returnToHomeBtn);
-        //isVisible(returnToHomeBtn, 30);
         Actions actions = new Actions(driver);
         actions.moveToElement(returnToHomeBtn).click().perform();
     }
