@@ -27,7 +27,8 @@ public class ChatPage extends BasePage {
     @FindBy(xpath = "//button[@title='Send']") WebElement sendBtn;
 
 
-    public void clickAddToContactsBtn(){
+    public void clickAddToContactsBtn() throws InterruptedException {
+        isVisibleWithTryCatch(addToContactsBtn, 1000000);
         Actions actions = new Actions(driver);
         actions.moveToElement(addToContactsBtn).click().build().perform();
         System.out.println("Contact request is sent");
@@ -47,7 +48,7 @@ public class ChatPage extends BasePage {
 
 
     public void populateIMarea(String text) throws InterruptedException {
-        isVisibleWithTryCatch(imArea, 100000);
+        isVisibleWithTryCatch(imArea, 2000000);
         Actions actions = new Actions(driver);
         actions.moveToElement(imArea).click().perform();
         imArea.sendKeys(text);

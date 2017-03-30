@@ -59,7 +59,7 @@ public class Test6_SendMessage {
 
     @Test(dependsOnMethods = "loginPositive")
     private void sendMessage() throws InterruptedException {
-        WebDriverWait webDriverWait = new WebDriverWait(driver, 60);
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 200);
         webDriverWait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".shellSplashContent")));
         homePage.searchForContactInContactList2("kvas.test_7");
         chatPage.populateIMarea("Hi");

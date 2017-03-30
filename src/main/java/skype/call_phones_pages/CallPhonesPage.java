@@ -57,7 +57,7 @@ public class CallPhonesPage extends BasePage {
 //        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".SelectBox-header")));
 
 //
-        if (!isVisibleWithTryCatch(chooseCountryDropdown, 1000000))
+        if (!isVisibleWithTryCatch(chooseCountryDropdown, 100000))
             throw new RuntimeException("runtime exception");
         Actions actions = new Actions(driver);
         actions.click(chooseCountryDropdown).perform();
